@@ -21,7 +21,7 @@
             @enderror
         </div>
         <div class="input-group mb-3">
-            <input type="password" name="" required autocomplete="current-password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+            <input type="password" name="password" required autocomplete="current-password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-lock"></span>
