@@ -8,7 +8,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="input-group mb-3">
-            <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" type="email" name="email" value="old('email')" required autofocus autocomplete="email">
+            <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="email">
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-envelope"></span>
