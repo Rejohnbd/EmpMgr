@@ -10,6 +10,7 @@
 'activePage' => 'User Role List'
 ])
 @endcomponent
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
