@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="sidebar-mini control-sidebar-slide-open layout-navbar-fixed">
     <div class="wrapper">
 
         @if(Auth::user()->role->slug == 'admin')
