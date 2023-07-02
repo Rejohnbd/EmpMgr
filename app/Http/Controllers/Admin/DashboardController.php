@@ -17,4 +17,11 @@ class DashboardController extends Controller
         $clientUser = User::where('role_id', 2)->count();
         return view('admin.dashboard.index', compact('countRoles', 'countUser', 'employeeUser', 'clientUser'));
     }
+
+    public function userRoles()
+    {
+        $allRoles = Role::with('userCounts')->get();
+        // dd($allRoles);
+        return view('admin.settings.roleList', compact('allRoles'));
+    }
 }

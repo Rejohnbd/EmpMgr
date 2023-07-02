@@ -10,7 +10,7 @@
                     @if(isset($itemOne) && isset($itemOneUrl))
                     <li class="breadcrumb-item"><a href="{{ route($itemOneUrl) }}">{{ $itemOne }}</a></li>
                     @endif
-                    @if(isset($itemOne))
+                    @if(isset($activePage))
                     <li class="breadcrumb-item active">{{ $activePage }}</li>
                     @endif
                 </ol>
