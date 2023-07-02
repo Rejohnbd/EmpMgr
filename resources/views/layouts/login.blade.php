@@ -19,7 +19,7 @@
     <div class="login-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <b>Emp</b>Mgr
+                <a href="javascript:void(0);" class="h1"><b>Emp</b> Mgr</a>
             </div>
             @yield('content')
         </div>
