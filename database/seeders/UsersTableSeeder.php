@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         User::create([
-            'role_id'   => 2,
+            'role_id'   => 3,
             'name'      => 'Employee User',
             'email'     => 'employee@mail.com',
             'password'  => Hash::make('password')
