@@ -21,7 +21,6 @@ class DashboardController extends Controller
     public function userRoles()
     {
         $allRoles = Role::with('userCounts')->get();
-        // dd($allRoles);
         return view('admin.settings.roleList', compact('allRoles'));
     }
 }

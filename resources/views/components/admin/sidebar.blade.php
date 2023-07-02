@@ -23,6 +23,29 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Users
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('users.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>User List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add User</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-header">Settings</li>
                 <li class="nav-item">
                     <a href="{{ route('user-roles') }}" class="nav-link @if(Request::is('user-roles')) active @endif">
@@ -30,35 +53,7 @@
                         <p class="text">User Roles</p>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Dashboard
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../index2.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v2</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../index3.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> --}}
+
             </ul>
         </nav>
     </div>
