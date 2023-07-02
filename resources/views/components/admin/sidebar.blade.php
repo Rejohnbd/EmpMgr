@@ -23,6 +23,13 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-header">Settings</li>
+                <li class="nav-item">
+                    <a href="{{ route('user-roles') }}" class="nav-link @if(Request::is('user-roles')) active @endif">
+                        <i class="nav-icon far fa-circle text-danger"></i>
+                        <p class="text">User Roles</p>
+                    </a>
+                </li>
                 {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
