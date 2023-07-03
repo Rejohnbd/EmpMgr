@@ -29,6 +29,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        flash()->addSuccess('Loggine Successfully. Welcome ' . Auth::user()->name);
+
         if (Auth::user()->role->slug == "admin") :
             return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
         elseif (Auth::user()->role->slug == "client") :
@@ -37,7 +39,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended(RouteServiceProvider::HOME);
         endif;
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
