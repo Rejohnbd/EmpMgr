@@ -53,7 +53,6 @@
                         <p class="text">User Roles</p>
                     </a>
                 </li>
-
             </ul>
         </nav>
     </div>
