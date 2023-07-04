@@ -27,19 +27,27 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $request->session()->regenerate();
+        if (Auth::user()->active_status) :
+            $request->session()->regenerate();
 
-        flash()->addSuccess('Loggine Successfully. Welcome ' . Auth::user()->name);
+            flash()->addSuccess('Loggine Successfully. Welcome ' . Auth::user()->name);
 
-        if (Auth::user()->role->slug == "admin") :
-            return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
-        elseif (Auth::user()->role->slug == "client") :
-            return redirect()->intended(RouteServiceProvider::CLIENT_HOME);
-        elseif (Auth::user()->role->slug == "employee") :
-            return redirect()->intended(RouteServiceProvider::HOME);
-        endif;
+            if (Auth::user()->role->slug == "admin") :
+                return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
+            elseif (Auth::user()->role->slug == "client") :
+                return redirect()->intended(RouteServiceProvider::CLIENT_HOME);
+            elseif (Auth::user()->role->slug == "employee") :
+                return redirect()->intended(RouteServiceProvider::HOME);
+            endif;
 
         // return redirect()->intended(RouteServiceProvider::HOME);
+        else :
+            Auth::guard('web')->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            flash()->addError('You are Inacive User. Please Contact with Authorize Person');
+            return redirect('/');
+        endif;
     }
 
     /**
