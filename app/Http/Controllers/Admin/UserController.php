@@ -59,9 +59,15 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        // echo decrypt($id);
-        $user = User::findOrFail(decrypt($id));
-        dd($user);
+        try {
+            echo decrypt($id);
+            die();
+            $user = User::findOrFail(decrypt($id));
+            dd($user);
+        } catch (\Throwable $th) {
+            // need to redirect when error occur
+            dd('error happed');
+        }
     }
 
     /**
