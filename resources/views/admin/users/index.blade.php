@@ -61,7 +61,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    Action
+                                    <a href="{{ route('users.edit', encrypt($user->id)) }}" class="btn btn-success">Edit</a>
                                 </td>
                             </tr>
                             @empty

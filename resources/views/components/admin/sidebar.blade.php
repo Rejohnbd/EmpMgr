@@ -47,8 +47,8 @@
                     </ul>
                 </li>
                 <li class="nav-header">Settings</li>
-                <li class="nav-item  @if(Request::is('user-roles')) menu-is-opening menu-open @endif">
-                    <a href="#" class="nav-link @if(Request::is('user-roles')) active @endif">
+                <li class="nav-item  @if(Request::is('user-roles') || Request::is('designations*')) menu-is-opening menu-open @endif">
+                    <a href="#" class="nav-link @if(Request::is('user-roles') || Request::is('designations*')) active @endif">
                         <i class="nav-icon fa-solid fa-gear"></i>
                         <p>
                             Setting
@@ -63,14 +63,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add User</p>
+                            <a href="{{ route('designations.index') }}" class="nav-link @if(Request::is('designations*')) active @endif">
+                                <i class="nav-icon far fa-circle text-success"></i>
+                                <p>Designation</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </nav>
     </div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 // Admin
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DesignationController;
 use App\Http\Controllers\Admin\UserController;
 
 /*
@@ -29,6 +30,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin-dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
     Route::get('/user-roles', [DashboardController::class, 'userRoles'])->name('user-roles');
     Route::resource('users', UserController::class);
+    Route::resource('designations', DesignationController::class);
     // 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

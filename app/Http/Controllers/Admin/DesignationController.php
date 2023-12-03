@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Designation;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class DesignationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $allUsers = User::with('role')->orderBy('id', 'DESC')->paginate(10);
-        return view('admin.users.index', compact('allUsers'));
+        $data = Designation::all();
+        return view('admin.designations.index', compact('data'));
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.designations.addEdit');
     }
 
     /**
@@ -59,9 +59,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        // echo decrypt($id);
-        $user = User::findOrFail(decrypt($id));
-        dd($user);
+        //
     }
 
     /**
