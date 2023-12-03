@@ -14,7 +14,7 @@
         </div>
 
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="{{ route('admin-dashboard') }}" class="nav-link @if(Request::is('admin-dashboard')) active @endif">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -47,13 +47,29 @@
                     </ul>
                 </li>
                 <li class="nav-header">Settings</li>
-                <li class="nav-item">
-                    <a href="{{ route('user-roles') }}" class="nav-link @if(Request::is('user-roles')) active @endif">
-                        <i class="nav-icon far fa-circle text-danger"></i>
-                        <p class="text">User Roles</p>
+                <li class="nav-item  @if(Request::is('user-roles') || Request::is('designations*')) menu-is-opening menu-open @endif">
+                    <a href="#" class="nav-link @if(Request::is('user-roles') || Request::is('designations*')) active @endif">
+                        <i class="nav-icon fa-solid fa-gear"></i>
+                        <p>
+                            Setting
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('user-roles') }}" class="nav-link @if(Request::is('user-roles')) active @endif">
+                                <i class="nav-icon far fa-circle text-danger"></i>
+                                <p class="text">User Roles</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('designations.index') }}" class="nav-link @if(Request::is('designations*')) active @endif">
+                                <i class="nav-icon far fa-circle text-success"></i>
+                                <p>Designation</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-
             </ul>
         </nav>
     </div>
